@@ -13,25 +13,24 @@ De opdracht moet voldoen aan de volgende voorwaarden:
 - De `TelevisionService` bevat:
   - de juiste _annotatie_
   - een _private_ variabele `TelevisionRepository`
-  - de connectie van de `Service` en de `Repository` door middel van een _autowired_
+  - de connectie van de `Service` en de `Repository` door middel van een _autowired_ of _constructor injection_
   - een _functie_ voor het ophalen van alle `Televisions`
   - een _functie_ voor het ophalen van 1 `Television`
   - een _functie_ voor het opslaan van 1 `Television`
   - een _functie_ voor het verwijderen van 1 `Television`
   - een _functie_ voor het updaten van 1 `Television`
-- De `Controller` is door middel van een _autowired_ gelinkt aan de `Service`;
+- De `Controller` is door middel van een _autowired_ of _constructor injection_ gelinkt aan de `Service`;
 - Het project bevat, op de juiste plaats in de map-structuur, een map genaamd `Dtos`;
 - De map `dtos` bevat een `TelevisionDto` en een `TelevisionInputDto`;
 - De _requestMappings_ in de `Controller` worden aangepast zodat deze de juiste response doorgeven via de `Service`;
 - De `Service` maakt gebruik van de gegevens die we via de `Controller` doorkrijgen van de `Dtos`;
-- Het project bevat de _validator_ dependency uit paragraaf 8.1 van de cursus Spring Boot in Edhub.
+- Het project bevat de _validator_ dependency uit paragraaf 7.1 van de cursus Spring Boot in Edhub.
 
 ### Belangrijk
 - Na deze les moeten de _requestMappings_ in de controller de juiste responses geven.
-- Na deze les is de applicatie voor het eerst functioneel.
 
 Het is belangrijk om goed te begrijpen hoe de lagen in onze multi-tier application samenwerken: 
-  - De `Controller` ontvangt een verzoek op een _endpoint_, als er _variable_ worden meegeven aan dit verzoek komen die binnen via de `TelevisionInputDto` ->
+  - De `Controller` ontvangt een verzoek op een _endpoint_, als er _variabele_ worden meegeven aan dit verzoek komen die binnen via de `TelevisionInputDto`, het `Path` of als `RequestParam` ->
   - De `Controller` geeft aan de hand van het verzoek en eventuele meegekregen _variable_ dit door aan de `Service` ->
   - De `Service` spreekt aan de hand van de geschreven functie de `Repository` aan met de juiste _find_ functie/query ->
   - De `Repository` gaat aan de hand van het bijbehorende `Model` zoeken naar de juiste gegevens en stuurt deze terug naar de `Service` ->

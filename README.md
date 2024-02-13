@@ -24,7 +24,7 @@ De opdracht moet voldoen aan de volgende voorwaarden:
 - De map `dtos` bevat een `TelevisionDto` en een `TelevisionInputDto`;
 - De _requestMappings_ in de `Controller` worden aangepast zodat deze de juiste response doorgeven via de `Service`;
 - De `Service` maakt gebruik van de gegevens die we via de `Controller` doorkrijgen van de `Dtos`;
-- Het project bevat de _validator_ dependency uit paragraaf 7.1 van de cursus Spring Boot in Edhub.
+- Het project bevat de _validation_ dependency uit paragraaf 7.1 van de cursus Spring Boot in Edhub.
 
 ### Belangrijk
 - Na deze les moeten de _requestMappings_ in de controller de juiste responses geven.

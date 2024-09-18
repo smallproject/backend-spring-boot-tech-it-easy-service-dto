@@ -2,6 +2,7 @@ package nl.smallproject.www.techiteasy.mappers;
 
 import nl.smallproject.www.techiteasy.models.Television;
 import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
+import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,22 +26,23 @@ public class TelevisionMapper {
         return television;
     }
 
-    public TelevisionInputDto televisionEntityToInputDto(Television television) {
-        TelevisionInputDto televisionInputDto = new TelevisionInputDto();
-        televisionInputDto.setName(television.getName());
-        televisionInputDto.setBrand(television.getBrand());
-        televisionInputDto.setPrice(television.getPrice());
-        televisionInputDto.setCurrentStock(television.getCurrentStock());
-        televisionInputDto.setHeight(television.getHeight());
-        televisionInputDto.setWidth(television.getWidth());
-        televisionInputDto.setScreenQuality(television.getScreenQuality());
-        televisionInputDto.setScreenType(television.getScreenType());
-        televisionInputDto.setWifi(television.getWifi());
-        televisionInputDto.setSmartTv(television.getSmartTv());
-        televisionInputDto.setVoiceControl(television.getVoiceControl());
-        televisionInputDto.setHdr(television.getHdr());
+    public TelevisionOutputDto televisionEntityToOutputDto(Television television) {
+        TelevisionOutputDto televisionOutputDto = new TelevisionOutputDto();
+        televisionOutputDto.setId(television.getId());
+        televisionOutputDto.setName(television.getName());
+        televisionOutputDto.setBrand(television.getBrand());
+        televisionOutputDto.setPrice(television.getPrice());
+        televisionOutputDto.setCurrentStock(television.getCurrentStock());
+        televisionOutputDto.setHeight(television.getHeight());
+        televisionOutputDto.setWidth(television.getWidth());
+        televisionOutputDto.setScreenQuality(television.getScreenQuality());
+        televisionOutputDto.setScreenType(television.getScreenType());
+        televisionOutputDto.setWifi(television.getWifi());
+        televisionOutputDto.setSmartTv(television.getSmartTv());
+        televisionOutputDto.setVoiceControl(television.getVoiceControl());
+        televisionOutputDto.setHdr(television.getHdr());
 
-        return televisionInputDto;
+        return televisionOutputDto;
     }
 
 }

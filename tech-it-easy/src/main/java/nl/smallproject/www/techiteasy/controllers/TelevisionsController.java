@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import nl.smallproject.www.techiteasy.models.Television;
 import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
 import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
+import nl.smallproject.www.techiteasy.models.TelevisionUpdateDto;
 import nl.smallproject.www.techiteasy.services.TelevisionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -61,6 +62,12 @@ public class TelevisionsController {
                 .toUri();
 
         return ResponseEntity.created(location).body("television");
+    }
+
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    public ResponseEntity<Object> updateTelevision(@PathVariable Long id , @Valid @RequestBody TelevisionUpdateDto televisionUpdateDto) {
+        televisionService.updateTelevision(id,televisionUpdateDto);
+        return ResponseEntity.noContent().build();
     }
 
 }

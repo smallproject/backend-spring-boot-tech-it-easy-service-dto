@@ -3,6 +3,7 @@ package nl.smallproject.www.techiteasy.mappers;
 import nl.smallproject.www.techiteasy.models.Television;
 import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
 import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
+import nl.smallproject.www.techiteasy.models.TelevisionUpdateDto;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -43,6 +44,24 @@ public class TelevisionMapper {
         televisionOutputDto.setHdr(television.getHdr());
 
         return televisionOutputDto;
+    }
+
+    public Television televisionUpdateDtoToEntity(TelevisionUpdateDto televisionUpdateDto) {
+        Television television = new Television();
+        television.setName(televisionUpdateDto.getName());
+        television.setBrand(televisionUpdateDto.getBrand());
+        television.setPrice(televisionUpdateDto.getPrice());
+        television.setCurrentStock(televisionUpdateDto.getCurrentStock());
+        television.setHeight(televisionUpdateDto.getHeight());
+        television.setWidth(televisionUpdateDto.getWidth());
+        television.setScreenQuality(televisionUpdateDto.getScreenQuality());
+        television.setScreenType(televisionUpdateDto.getScreenType());
+        television.setWifi(televisionUpdateDto.getWifi());
+        television.setSmartTv(televisionUpdateDto.getSmartTv());
+        television.setVoiceControl(televisionUpdateDto.getVoiceControl());
+        television.setHdr(televisionUpdateDto.getHdr());
+
+        return television;
     }
 
 }

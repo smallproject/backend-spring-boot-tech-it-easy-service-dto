@@ -4,7 +4,9 @@ import nl.smallproject.www.techiteasy.mappers.TelevisionMapper;
 import nl.smallproject.www.techiteasy.models.Television;
 import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
 import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
+import nl.smallproject.www.techiteasy.models.TelevisionUpdateDto;
 import nl.smallproject.www.techiteasy.repositories.TelevisionRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -40,5 +42,13 @@ public class TelevisionService {
         Television television = televisionMapper.televisionInputDtoToEntity(televisionInputDto);
         televisionRepository.save(television);
         return television;
+    }
+
+    public void updateTelevision(Long id, TelevisionUpdateDto televisionUpdateDto) {
+        Television existingTelevision = televisionRepository.getReferenceById(id);
+        Television updatedTelevision = televisionMapper.televisionUpdateDtoToEntity(televisionUpdateDto);
+
+        BeanUtils.copyProperties(updatedTelevision, existingTelevision, "id");
+        televisionRepository.save(existingTelevision);
     }
 }

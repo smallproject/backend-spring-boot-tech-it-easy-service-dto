@@ -6,12 +6,12 @@ import jakarta.validation.constraints.Size;
 
 public class TelevisionInputDto {
 
-    @NotBlank
-    @Size(min = 3, max = 255)
+    @NotBlank(message = "{television.name.notblank}")
+    @Size(min = 3, max = 255, message = "{television.name.size}")
     private String name;
 
-    @NotBlank
-    @Size(min = 3, max = 255)
+    @NotBlank(message = "{television.brand.notblank}")
+    @Size(min = 3, max = 255, message = "{television.brand.size}")
     private String brand;
 
     private double price;
@@ -22,13 +22,26 @@ public class TelevisionInputDto {
 
     private double width;
 
-    @NotBlank
-    @Size(min = 3, max = 255)
+    @NotBlank(message = "{television.screenquality.notblank}")
+    @Size(min = 3, max = 255, message = "{television.screenquality.size}")
     private String screenQuality;
 
-    @NotBlank
-    @Size(min = 3, max = 255)
+    @NotBlank(message = "{television.screentype.notblank}")
+    @Size(min = 3, max = 255, message = "{television.screentype.size}")
     private String screenType;
+
+    @NotNull(message = "{television.wifi.notnull}")
+    private Boolean wifi;
+
+    @NotNull(message = "{television.smarttv.notnull}")
+    private Boolean smartTv;
+
+    @NotNull(message = "{television.voicecontrol.notnull}")
+    private Boolean voiceControl;
+
+    @NotNull(message = "{television.hdr.notnull}")
+    private Boolean hdr;
+
 
     public @NotNull Boolean getWifi() {
         return wifi;
@@ -126,16 +139,5 @@ public class TelevisionInputDto {
         this.hdr = hdr;
     }
 
-    @NotNull
-    private Boolean wifi;
-
-    @NotNull(message = "smartTV mag niet null zijn")
-    private Boolean smartTv;
-
-    @NotNull
-    private Boolean voiceControl;
-
-    @NotNull
-    private Boolean hdr;
 
 }

@@ -3,6 +3,7 @@ package nl.smallproject.www.techiteasy.services;
 import nl.smallproject.www.techiteasy.mappers.TelevisionMapper;
 import nl.smallproject.www.techiteasy.models.Television;
 import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
+import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
 import nl.smallproject.www.techiteasy.repositories.TelevisionRepository;
 import org.springframework.stereotype.Service;
 
@@ -18,18 +19,26 @@ public class TelevisionService {
         this.televisionMapper = televisionMapper;
     }
 
+//    zometeen verwijderen
     public Television getTelevisionById(long id) {
         return televisionRepository.getReferenceById(id);
     }
 
-    public TelevisionInputDto getTelevisionById(Long id) {
+    public TelevisionOutputDto getTelevisionById(Long id) {
         Optional<Television> televisionOptional = televisionRepository.findById(id);
 
         if (televisionOptional.isPresent()) {
             Television television = televisionOptional.get();
-            return televisionMapper.televisionEntityToInputDto(television);
+            return televisionMapper.televisionEntityToOutputDto(television);
         } else {
             throw new RuntimeException("Television not found");
         }
+    }
+
+    public Television createTelevision(TelevisionInputDto televisionInputDto) {
+//        Option<Television> televisionOptional = new Television(); // unnecesary to be removed
+        Television television = televisionMapper.televisionInputDtoToEntity(televisionInputDto);
+        televisionRepository.save(television);
+        return television;
     }
 }

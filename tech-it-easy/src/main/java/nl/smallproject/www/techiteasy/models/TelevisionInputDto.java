@@ -42,28 +42,19 @@ public class TelevisionInputDto {
     @NotNull(message = "{television.hdr.notnull}")
     private Boolean hdr;
 
-
-    public @NotNull Boolean getWifi() {
-        return wifi;
-    }
-
-    public void setWifi(@NotNull Boolean wifi) {
-        this.wifi = wifi;
-    }
-
-    public @NotBlank @Size(min = 3, max = 255) String getName() {
+    public @NotBlank(message = "{television.name.notblank}") @Size(min = 3, max = 255, message = "{television.name.size}") String getName() {
         return name;
     }
 
-    public void setName(@NotBlank @Size(min = 3, max = 255) String name) {
+    public void setName(@NotBlank(message = "{television.name.notblank}") @Size(min = 3, max = 255, message = "{television.name.size}") String name) {
         this.name = name;
     }
 
-    public @NotBlank @Size(min = 3, max = 255) String getBrand() {
+    public @NotBlank(message = "{television.brand.notblank}") @Size(min = 3, max = 255, message = "{television.brand.size}") String getBrand() {
         return brand;
     }
 
-    public void setBrand(@NotBlank @Size(min = 3, max = 255) String brand) {
+    public void setBrand(@NotBlank(message = "{television.brand.notblank}") @Size(min = 3, max = 255, message = "{television.brand.size}") String brand) {
         this.brand = brand;
     }
 
@@ -99,45 +90,51 @@ public class TelevisionInputDto {
         this.width = width;
     }
 
-    public @NotBlank @Size(min = 3, max = 255) String getScreenQuality() {
+    public @NotBlank(message = "{television.screenquality.notblank}") @Size(min = 3, max = 255, message = "{television.screenquality.size}") String getScreenQuality() {
         return screenQuality;
     }
 
-    public void setScreenQuality(@NotBlank @Size(min = 3, max = 255) String screenQuality) {
+    public void setScreenQuality(@NotBlank(message = "{television.screenquality.notblank}") @Size(min = 3, max = 255, message = "{television.screenquality.size}") String screenQuality) {
         this.screenQuality = screenQuality;
     }
 
-    public @NotBlank @Size(min = 3, max = 255) String getScreenType() {
+    public @NotBlank(message = "{television.screentype.notblank}") @Size(min = 3, max = 255, message = "{television.screentype.size}") String getScreenType() {
         return screenType;
     }
 
-    public void setScreenType(@NotBlank @Size(min = 3, max = 255) String screenType) {
+    public void setScreenType(@NotBlank(message = "{television.screentype.notblank}") @Size(min = 3, max = 255, message = "{television.screentype.size}") String screenType) {
         this.screenType = screenType;
     }
 
-    public @NotNull Boolean getSmartTv() {
+    public @NotNull(message = "{television.wifi.notnull}") Boolean getWifi() {
+        return wifi;
+    }
+
+    public void setWifi(@NotNull(message = "{television.wifi.notnull}") Boolean wifi) {
+        this.wifi = wifi;
+    }
+
+    public @NotNull(message = "{television.smarttv.notnull}") Boolean getSmartTv() {
         return smartTv;
     }
 
-    public void setSmartTv(@NotNull Boolean smartTv) {
+    public void setSmartTv(@NotNull(message = "{television.smarttv.notnull}") Boolean smartTv) {
         this.smartTv = smartTv;
     }
 
-    public @NotNull Boolean getVoiceControl() {
+    public @NotNull(message = "{television.voicecontrol.notnull}") Boolean getVoiceControl() {
         return voiceControl;
     }
 
-    public void setVoiceControl(@NotNull Boolean voiceControl) {
+    public void setVoiceControl(@NotNull(message = "{television.voicecontrol.notnull}") Boolean voiceControl) {
         this.voiceControl = voiceControl;
     }
 
-    public @NotNull Boolean getHdr() {
+    public @NotNull(message = "{television.hdr.notnull}") Boolean getHdr() {
         return hdr;
     }
 
-    public void setHdr(@NotNull Boolean hdr) {
+    public void setHdr(@NotNull(message = "{television.hdr.notnull}") Boolean hdr) {
         this.hdr = hdr;
     }
-
-
 }

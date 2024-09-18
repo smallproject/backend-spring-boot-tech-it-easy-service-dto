@@ -1,9 +1,12 @@
 package nl.smallproject.www.techiteasy.controllers;
 
+import jakarta.validation.Valid;
 import nl.smallproject.www.techiteasy.models.Television;
+import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
 import nl.smallproject.www.techiteasy.services.TelevisionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +23,12 @@ public class TelevisionsController {
     public ResponseEntity<Television> getTelevisionById(long id) {
         Television television = televisionService.getTelevisionById(id);
         return ResponseEntity.ok(television);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<TelevisionInputDto> getTelevisionById(@Valid @PathVariable Long id) {
+        TelevisionInputDto televisionInputDto = televisionService.getTelevisionById(id);
+        return ResponseEntity.ok(televisionInputDto);
     }
 
 }

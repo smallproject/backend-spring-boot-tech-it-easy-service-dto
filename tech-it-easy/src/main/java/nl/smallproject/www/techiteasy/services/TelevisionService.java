@@ -51,4 +51,8 @@ public class TelevisionService {
         BeanUtils.copyProperties(updatedTelevision, existingTelevision, "id");
         televisionRepository.save(existingTelevision);
     }
+
+    public void deleteTelevision(Long id) {
+        televisionRepository.deleteById(id);
+    }
 }

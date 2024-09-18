@@ -70,4 +70,9 @@ public class TelevisionsController {
         return ResponseEntity.noContent().build();
     }
 
+    @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<Object> deleteTelevision(@PathVariable Long id) {
+        televisionService.deleteTelevision(id);
+        return ResponseEntity.noContent().build();
+    }
 }

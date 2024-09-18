@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/television")
@@ -74,5 +75,11 @@ public class TelevisionsController {
     public ResponseEntity<Object> deleteTelevision(@PathVariable Long id) {
         televisionService.deleteTelevision(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<TelevisionOutputDto>> getAllTelevisions() {
+        List<TelevisionOutputDto> televisionOutputDtos = televisionService.getAllTelevision();
+        return ResponseEntity.ok(televisionOutputDtos);
     }
 }

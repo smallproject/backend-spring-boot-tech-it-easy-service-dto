@@ -9,6 +9,8 @@ import nl.smallproject.www.techiteasy.repositories.TelevisionRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -54,5 +56,16 @@ public class TelevisionService {
 
     public void deleteTelevision(Long id) {
         televisionRepository.deleteById(id);
+    }
+
+    public List<TelevisionOutputDto> getAllTelevision() {
+        List<Television> televisions = televisionRepository.findAll();
+        List<TelevisionOutputDto> televisionOutputDtos = new ArrayList<>();
+
+        for (var television: televisions) {
+            televisionOutputDtos.add(televisionMapper.televisionEntityToOutputDto(television));
+        }
+
+        return televisionOutputDtos;
     }
 }

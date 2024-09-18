@@ -1,4 +1,4 @@
-package nl.smallproject.www.techiteasy.models;
+package nl.smallproject.www.techiteasy.dtos;
 
 public class TelevisionOutputDto {
 

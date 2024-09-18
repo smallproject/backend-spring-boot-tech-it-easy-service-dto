@@ -1,9 +1,9 @@
 package nl.smallproject.www.techiteasy.mappers;
 
 import nl.smallproject.www.techiteasy.models.Television;
-import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
-import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
-import nl.smallproject.www.techiteasy.models.TelevisionUpdateDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionInputDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionOutputDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionUpdateDto;
 import org.springframework.stereotype.Component;
 
 @Component

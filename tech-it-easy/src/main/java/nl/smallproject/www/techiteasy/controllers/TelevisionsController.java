@@ -1,15 +1,11 @@
 package nl.smallproject.www.techiteasy.controllers;
 
 import jakarta.validation.Valid;
-import nl.smallproject.www.techiteasy.models.Television;
-import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
-import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
-import nl.smallproject.www.techiteasy.models.TelevisionUpdateDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionInputDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionOutputDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionUpdateDto;
 import nl.smallproject.www.techiteasy.services.TelevisionService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 

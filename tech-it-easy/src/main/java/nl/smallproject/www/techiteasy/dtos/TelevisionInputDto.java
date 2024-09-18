@@ -1,10 +1,10 @@
-package nl.smallproject.www.techiteasy.models;
+package nl.smallproject.www.techiteasy.dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
-public class TelevisionUpdateDto {
+public class TelevisionInputDto {
 
     @NotBlank(message = "{television.name.notblank}")
     @Size(min = 3, max = 255, message = "{television.name.size}")

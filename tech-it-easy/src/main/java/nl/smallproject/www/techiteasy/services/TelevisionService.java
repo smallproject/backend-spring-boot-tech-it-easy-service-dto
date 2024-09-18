@@ -2,9 +2,9 @@ package nl.smallproject.www.techiteasy.services;
 
 import nl.smallproject.www.techiteasy.mappers.TelevisionMapper;
 import nl.smallproject.www.techiteasy.models.Television;
-import nl.smallproject.www.techiteasy.models.TelevisionInputDto;
-import nl.smallproject.www.techiteasy.models.TelevisionOutputDto;
-import nl.smallproject.www.techiteasy.models.TelevisionUpdateDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionInputDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionOutputDto;
+import nl.smallproject.www.techiteasy.dtos.TelevisionUpdateDto;
 import nl.smallproject.www.techiteasy.repositories.TelevisionRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
